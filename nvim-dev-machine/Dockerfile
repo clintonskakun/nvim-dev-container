@@ -41,6 +41,7 @@ RUN apk update && apk add --no-cache \
     zig \
     wl-clipboard \
     curl \
+    build-base \
     lua5.1 \
     luarocks5.1 \
     docker-cli \
