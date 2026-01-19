@@ -1,0 +1,14 @@
+#!/bin/bash
+URL_TO_COPY="$1"
+
+# 1. Send the URL to the Wayland clipboard
+# The wl-copy command will now be able to communicate with the host's compositor
+if command -v wl-copy &> /dev/null
+then
+    echo "$URL_TO_COPY" | wl-copy
+    echo "URL successfully copied to Wayland clipboard."
+else
+    echo "wl-copy not found. Falling back to log file..."
+    # Fallback to the log file method (as defined in the previous answer)
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $URL_TO_COPY" >> /tmp/host_share/container_urls.log
+fi
