@@ -62,7 +62,8 @@ RUN chmod +x /usr/local/bin/xdg-open
 RUN git config --global user.name "Your Name Here" && \
     git config --global user.email "your.email@example.com" && \
     git config --global --add safe.directory /repo && \
-    git config --global pull.rebase false
+    git config --global pull.rebase false && \
+    git config --global push.autoSetupRemote true
 
 WORKDIR /repo
 ENV REMOTE_CONTAINERS='true'
